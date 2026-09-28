@@ -1,0 +1,104 @@
+/*
+ * Design tokens. Every drawn value comes from the Claude Design source (see
+ * DESIGN_AUDIT.md §3–5). Undrawn states (hover, error, disabled) use the
+ * Minimals UI kit, which the design's grey scale is taken from.
+ */
+:root {
+  --color-text-primary: #1c252e;
+  --color-text-secondary: #637381;
+  --color-text-disabled: #919eab;
+  --color-brand: #ff7a40;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-field: rgba(145, 158, 171, 0.08);
+  --color-field-hover: rgba(145, 158, 171, 0.16);
+  --color-button-hover: #454f5b;
+  --color-disabled-bg: rgba(145, 158, 171, 0.24);
+  --color-disabled-text: rgba(145, 158, 171, 0.8);
+  --color-error: #ff5630;
+  --color-error-dark: #b71d18;
+  --color-error-field: rgba(255, 86, 48, 0.08);
+  --color-error-field-hover: rgba(255, 86, 48, 0.16);
+  --color-alert-error-bg: #ffe9d5;
+  --color-alert-error-text: #7a0916;
+  --color-alert-info-bg: #cafdf5;
+  --color-alert-info-text: #003768;
+  --color-alert-info-icon: #00b8d9;
+  --color-focus: #1c252e;
+
+  --shadow-card: 0 24px 48px rgba(145, 158, 171, 0.16);
+  --radius-card: 16px;
+  --radius-control: 8px;
+
+  /* Set by next/font in the root layout. */
+  --font-body: var(--font-public-sans), sans-serif;
+  --font-heading: var(--font-barlow), sans-serif;
+  --font-brand: var(--font-outfit), sans-serif;
+}
+
+/* Breakpoint: mobile layout below 600px (media queries can't read custom properties). */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--color-white);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

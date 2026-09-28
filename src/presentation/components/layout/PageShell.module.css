@@ -1,0 +1,60 @@
+.page {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+/* Fixed so the heavy blur is painted once, not on every scroll frame. */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: var(--color-white);
+}
+
+/*
+ * Oversized by 80px on each side: blurring an image that ends exactly at the
+ * viewport edge fades it into white and leaves a light halo (visible in the
+ * design along the right edge). Pushing the edges off-screen removes it.
+ */
+.backdropFrame {
+  position: absolute;
+  inset: -80px;
+}
+
+.backdropImage {
+  object-fit: cover;
+  filter: blur(40px);
+}
+
+.backdrop::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/*
+ * The card is centred in the whole viewport, not in the space under the
+ * header: at 1440×1024 that puts the sign-in card at y=297, as drawn.
+ * Symmetric padding keeps it clear of the header and lets short viewports
+ * scroll instead of clipping.
+ */
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 96px 24px;
+}
+
+@media (max-width: 599px) {
+  .main {
+    display: block;
+    min-height: 0;
+    padding: 24px 16px 40px;
+  }
+}

@@ -1,0 +1,117 @@
+/* Overlays the page (not in its flow) so the card can centre on the full viewport. */
+.header {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  padding: 0 24px;
+}
+
+.wordmark {
+  font-family: var(--font-brand);
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 22px;
+  letter-spacing: 0.5px;
+  color: var(--color-text-primary);
+  border-radius: 4px;
+}
+
+.wordmark:hover {
+  text-decoration: none;
+}
+
+.brand {
+  color: var(--color-brand);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.language {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 50px;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+
+.language:hover {
+  background: rgba(99, 115, 129, 0.08);
+}
+
+.flag {
+  display: block;
+  height: 20px;
+  object-fit: cover;
+}
+
+/* Flag sizes differ per artboard; reproduced as drawn (DESIGN_AUDIT.md D4). */
+.flag[data-locale='en'] {
+  width: 28px;
+  border-radius: 4px;
+}
+
+.flag[data-locale='de'] {
+  width: 34px;
+  border-radius: 3px;
+}
+
+.signOut {
+  height: 40px;
+  padding: 0 8px;
+  border: 0;
+  border-radius: var(--radius-control);
+  background: transparent;
+  font-family: var(--font-brand);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+.signOut:hover {
+  text-decoration: underline;
+}
+
+.signOut:disabled {
+  color: var(--color-text-disabled);
+  cursor: progress;
+}
+
+@media (max-width: 599px) {
+  .header {
+    position: relative;
+    height: 64px;
+    padding: 0 16px;
+  }
+
+  /* 44×44 touch target with the flag flush right, as drawn. */
+  .language {
+    justify-content: flex-end;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-control);
+  }
+
+  .language:hover {
+    background: transparent;
+  }
+
+  .flag[data-locale='de'] {
+    width: 32px;
+  }
+}

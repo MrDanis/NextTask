@@ -1,0 +1,57 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 32px;
+}
+
+.subtitle {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+}
+
+.muted {
+  color: var(--color-text-secondary);
+}
+
+.inlineLink {
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: var(--font-brand);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--color-black);
+  cursor: pointer;
+}
+
+.inlineLink:hover {
+  text-decoration: underline;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+/* Drawn as a full-width right-aligned block; only the text is the hit area here. */
+.generateLink {
+  align-self: flex-end;
+  font-size: 14px;
+  line-height: 22px;
+}
