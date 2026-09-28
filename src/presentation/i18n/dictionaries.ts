@@ -16,6 +16,7 @@ const en = {
     home: 'TJ Labs home',
     language: 'Language: English. Switch to German',
     signOut: 'Sign out',
+    settings: 'Settings',
   },
   signIn: {
     title: 'Sign in',
@@ -102,6 +103,7 @@ const de: Dictionary = {
     home: 'TJ Labs Startseite',
     language: 'Sprache: Deutsch. Zu Englisch wechseln',
     signOut: 'Abmelden',
+    settings: 'Einstellungen',
   },
   signIn: {
     title: 'Anmelden',

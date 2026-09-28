@@ -10,7 +10,13 @@ import { useLocaleSwitch } from '../../hooks/useLocaleSwitch';
 import { useI18n } from '../../i18n/I18nProvider';
 import styles from './Header.module.css';
 
-export function Header({ currentUser }: { currentUser: CurrentUserDto | null }) {
+export function Header({
+  currentUser,
+  showSettings = false,
+}: {
+  currentUser: CurrentUserDto | null;
+  showSettings?: boolean;
+}) {
   const { locale, t } = useI18n();
   const language = useLocaleSwitch(locale);
 
@@ -39,6 +45,17 @@ export function Header({ currentUser }: { currentUser: CurrentUserDto | null }) 
             data-locale={locale}
           />
         </button>
+        {showSettings && (
+          <Image
+            src="/images/settings-outline.png"
+            alt={t.header.settings}
+            width={24}
+            height={24}
+            loading="eager"
+            className={styles.settings}
+            data-locale={locale}
+          />
+        )}
       </div>
     </header>
   );

@@ -18,7 +18,7 @@ export default async function GeneratorPage() {
     getGeneratorStatus.execute(),
   ]);
   return (
-    <PageShell locale={await getRequestLocale()} currentUser={currentUser}>
+    <PageShell locale={await getRequestLocale()} currentUser={currentUser} showSettings>
       <GeneratorPanel status={status} />
     </PageShell>
   );

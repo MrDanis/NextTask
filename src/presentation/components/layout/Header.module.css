@@ -69,6 +69,25 @@
   border-radius: 3px;
 }
 
+/*
+ * Visible gap from the flag's edge = half the flag's width (EN 28 → 14px, DE 34 → 17px).
+ * The flag is centred in the 40px button, so its inset (40 − w) / 2 plus the 8px
+ * .actions gap already count towards it; the margin supplies the rest.
+ */
+.settings {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.settings[data-locale='en'] {
+  margin-left: 0; /* 6 inset + 8 gap = 14 */
+}
+
+.settings[data-locale='de'] {
+  margin-left: 4px; /* 3 inset + 8 gap + 4 = 15 */
+}
+
 .signOut {
   height: 40px;
   padding: 0 8px;
@@ -113,5 +132,10 @@
 
   .flag[data-locale='de'] {
     width: 32px;
+  }
+
+  /* Desktop only. */
+  .settings {
+    display: none;
   }
 }

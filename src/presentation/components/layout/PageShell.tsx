@@ -14,10 +14,12 @@ interface PageShellProps {
    */
   locale: Locale;
   currentUser: CurrentUserDto | null;
+  /** Shows the settings icon beside the flag (generator screen only). */
+  showSettings?: boolean;
   children: ReactNode;
 }
 
-export function PageShell({ locale, currentUser, children }: PageShellProps) {
+export function PageShell({ locale, currentUser, showSettings = false, children }: PageShellProps) {
   return (
     <I18nProvider locale={locale}>
       <div className={styles.page}>
@@ -35,7 +37,7 @@ export function PageShell({ locale, currentUser, children }: PageShellProps) {
             />
           </div>
         </div>
-        <Header currentUser={currentUser} />
+        <Header currentUser={currentUser} showSettings={showSettings} />
         <main className={styles.main}>{children}</main>
       </div>
     </I18nProvider>
