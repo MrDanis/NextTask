@@ -1,0 +1,14 @@
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+.env*.local
+.env
+
+# Written by `next dev` for coding agents; not part of the project.
+AGENTS.md
+CLAUDE.md
+.DS_Store
+.vercel
+.env*
