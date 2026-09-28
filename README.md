@@ -65,3 +65,7 @@ After generating, you can copy the number, go to Sign In and paste it as the pas
 ## Language
 
 English and German, saved in a cookie. Defaults follow the design: Sign In starts in English, the generator in German.
+
+## Note   
+
+Rest of the details are added in the TJ_Labs_Implementation_Notes.docx. That clearly describe my decisions and the places where i use the AI to get the job done.
